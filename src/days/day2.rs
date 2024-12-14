@@ -2,12 +2,12 @@ use crate::days::Solve;
 
 pub struct Day2;
 
-impl Solve<u32> for Day2 {
-    fn solve_part_1(&mut self, input: &str) -> u32 {
+impl Solve<i128> for Day2 {
+    fn solve_part_1(&mut self, input: &str) -> i128 {
         let parsed = self.parsery(input);
-        parsed.iter().map(|i| i.is_safe()).filter(|i| *i).count() as u32
+        parsed.iter().map(|i| i.is_safe()).filter(|i| *i).count() as i128
     }
-    fn solve_part_2(&mut self, input: &str) -> u32 {
+    fn solve_part_2(&mut self, input: &str) -> i128 {
         let parsed = self.parsery(input);
         let mut is_safe = 0;
         for i in parsed {
