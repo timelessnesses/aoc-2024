@@ -26,6 +26,8 @@ enum Days {
     Day2,
     Day3,
     Day4,
+    Day5,
+    Day6
 }
 
 impl FromStr for Days {
@@ -36,6 +38,8 @@ impl FromStr for Days {
             "2" => Ok(Self::Day2),
             "3" => Ok(Self::Day3),
             "4" => Ok(Self::Day4),
+            "5" => Ok(Self::Day5),
+            "6" => Ok(Self::Day6),
             _ => Err(format!("Invalid day: {}", s)),
         }
     }
@@ -48,6 +52,8 @@ impl Days {
             Self::Day2 => Box::new(days::Day2),
             Self::Day3 => Box::new(days::Day3),
             Self::Day4 => Box::new(days::Day4),
+            Self::Day5 => Box::new(days::Day5),
+            Self::Day6 => Box::new(days::Day6),
         }
     }
     fn get_input(&self) -> String {
@@ -56,6 +62,8 @@ impl Days {
             Self::Day2 => include_str!("../input/day2.txt").to_string(),
             Self::Day3 => include_str!("../input/day3.txt").to_string(),
             Self::Day4 => include_str!("../input/day4.txt").to_string(),
+            Self::Day5 => include_str!("../input/test_day5.txt").to_string(),
+            Self::Day6 => include_str!("../input/test_day6.txt").to_string(),
         }
     }
 }
